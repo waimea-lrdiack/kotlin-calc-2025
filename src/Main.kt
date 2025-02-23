@@ -1,3 +1,4 @@
+import kotlin.math.pow
 
 
 fun main() {
@@ -7,35 +8,46 @@ fun main() {
     println("=========================================================================================================")
     println()
 
-    var number1 = getFloat("Enter a number: ")
-    var number2 = getFloat("Enter a 2nd number: ")
+    val number1 = getFloat("Enter a number: ")
+    val number2 = getFloat("Enter a 2nd number: ")
 
     while (true) {
-        var operation = getString("Enter an operation (+, -, *, /): ")
+        val operation = getString("Enter an operation (+, -, *, /, ^, !): ")
+        val result: Float
+
         if (operation == "+") {
-            println(number1 + number2)
+            val result = println(number1 + number2)
             break
         }
+
         if (operation == "-") {
-            println(number1 - number2)
+            val result = println(number1 - number2)
             break
         }
+
         if (operation == "*") {
-            println(number1 * number2)
+            val result = println(number1 * number2)
             break
         }
+
         if (operation == "/") {
-            println(number1 / number2)
+            val result = println(number1 / number2)
             break
         }
+
+        if (operation == "^") {
+            val result = println(number1.pow(number2).toDouble())
+        }
+
+
         else {
             println("Enter a valid operation")
             continue
         }
     }
 
-
 }
+
 
 
 fun getString(prompt: String): String {
